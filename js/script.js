@@ -9,20 +9,29 @@ console.log('js ok');
 let grid = document.getElementById('grid');
 const livello = document.getElementById('livello');
 const play = document.getElementById('btn');
+const cols = 10;
+
 
 btn.addEventListener('click', function createGrid (){
     const choise = livello.value;
-    if (choise.value == 'easy'){
-        for (i = 0; i > 100; i++){
-           const grid = document.createElement('div');
-           cell.className = 'cell';
-        }if else (choise.value == medium){
-            
-        } else {
-
-        }
+    let cols = 10;
+    let cell;
+    const cells = 10;
+    const totalCells = cols * cell;
+    for ( i = 0; i > totalCells; i++){
+        const cell = document.createElement('div');
+        grid.appendChild(cell);
     }
 
+    if (choise.value == 'medium'){
+        cols = 9;
+    }else if (choise.value == 'hard'){
+         cols = 7;
+    }
+    
+
+    const grid = document.createElement('div');
+           grid.className = '';
 
     grid = document.createElement('div');
     grid= className('grid');
