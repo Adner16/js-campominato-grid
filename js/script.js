@@ -15,26 +15,57 @@ const cols = 10;
 btn.addEventListener('click', function createGrid (){
     const choise = livello.value;
     let cols = 10;
-    let cell;
-    const cells = 10;
-    const totalCells = cols * cell;
-    for ( i = 0; i > totalCells; i++){
-        const cell = document.createElement('div');
-        grid.appendChild(cell);
-    }
+    let cells = 10;
+    let totalCells = cols * cells;
 
-    if (choise.value == 'medium'){
-        cols = 9;
-    }else if (choise.value == 'hard'){
-         cols = 7;
-    }
+
+    if (livello.value == 'easy'){
+        for (let i = 0; i < totalCells; i++){
+            const cell = document.createElement('div');
+            grid.appendChild(cell);
+            cell.classList.add('cell-easy');
+            cell.innerText = i + 1;
     
+            cell.addEventListener('click', function () {
+                cell.classList.toggle('clicked');
+            }) 
+        }
+    }
 
-    const grid = document.createElement('div');
-           grid.className = '';
+    else if (livello.value == 'medium'){
+        cols = 9;
+        cells = 9;
+        totalCells = cols * cells;
 
-    grid = document.createElement('div');
-    grid= className('grid');
+        for (let i = 0; i < totalCells; i++){
+            const cell = document.createElement('div');
+            grid.appendChild(cell);
+            cell.classList.add('cell-medium');
+            cell.innerText = i + 1;
+    
+            cell.addEventListener('click', function () {
+                cell.classList.toggle('clicked');
+            }) 
+        }
+    }
+
+    else if (livello.value == 'hard') {
+
+        cols = 7;
+        cells = 7;
+        totalCells = 49;
+
+        for (let i = 0; i < totalCells; i++){
+            const cell = document.createElement('div');
+            grid.appendChild(cell);
+            cell.classList.add('cell-hard');
+            cell.innerText = i + 1;
+    
+            cell.addEventListener('click', function () {
+                cell.classList.toggle('clicked');
+            }) 
+        }    
+    }
 })
 
 
