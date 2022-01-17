@@ -1,0 +1,17 @@
+
+.col{
+    height: 500px;
+    width: 500px;
+    background-color: dodgerblue;
+    margin:20px 200px;
+}
+
+
+select{
+    align-self: center;
+}
+
+
+.grid{
+    background-color: dodgerblue;
+}
